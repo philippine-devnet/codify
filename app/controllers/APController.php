@@ -1,6 +1,8 @@
 <?php
 	class APController extends BaseController{
-		public function getIndex(){}
+		public function getIndex(){
+			return View::make('admin.index')->with( array('title'=>'Dashboard | Index','current'=>'index') );
+		}
 		public function getLogout(){
 			Auth::logout();
 			return Redirect::to('AP');
