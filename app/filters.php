@@ -39,6 +39,11 @@ Route::filter('auth', function()
 });
 
 
+Route::filter('admin-auth',function(){
+	if(!Auth::user())
+		return Redirect::to('login');
+});
+
 Route::filter('auth.basic', function()
 {
 	return Auth::basic();
