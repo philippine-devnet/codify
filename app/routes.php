@@ -11,7 +11,11 @@
 |
 */
 
-Route::controller('admin', 'AdminController');
+Route::controller('AP', 'APController');
 Route::controller('login', 'LoginController');
+
+Route::get('test',function(){
+
+});
 
 

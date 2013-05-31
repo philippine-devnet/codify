@@ -7,7 +7,7 @@
 			$credentials = array('username'=>e(Input::get('username')), 'password'=>e(Input::get('password')));
 
 			if(Auth::attempt($credentials)){
-				return Redirect::to('admin');
+				return Redirect::to('AP');
 			}else{
 				return Redirect::to('login')->with('error',1);
 			}
