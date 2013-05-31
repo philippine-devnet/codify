@@ -5,7 +5,7 @@
 		}
 		public function getLogout(){
 			Auth::logout();
-			return Redirect::to('AP');
+			return Redirect::to('ap');
 		}
 		public function __construct(){
         	$this->beforeFilter('admin-auth');

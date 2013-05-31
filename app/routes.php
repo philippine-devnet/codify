@@ -11,11 +11,6 @@
 |
 */
 
-Route::controller('AP', 'APController');
+Route::controller('ap', 'APController');
 Route::controller('login', 'LoginController');
-
-Route::get('test',function(){
-
-});
-
 

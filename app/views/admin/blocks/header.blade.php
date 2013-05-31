@@ -27,30 +27,19 @@
 	    <!-- end: CSS -->
 
 	    <!-- start: JS -->
-	    <script src="http://www.html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	    <script src="{{ URL::to('admin') }}/assets/js/jquery-1.9.1.js"></script>
 	    <script src="{{ URL::to('admin') }}/assets/lib/bootstrap/js/bootstrap.js"></script>
-	    <script src='{{ URL::to('admin') }}/assets/lib/fullcalendar/fullcalendar.min.js'></script>
-	    <script src="{{ URL::to('admin') }}/assets/lib/pnotify/jquery.pnotify.min.js"></script>
+	  
 	    <script src='{{ URL::to('admin') }}/assets/lib/jasny/bootstrap-fileupload.js'></script>
 	    <script src='{{ URL::to('admin') }}/assets/lib/jasny/bootstrap-inputmask.js'></script>
 	    <script src='{{ URL::to('admin') }}/assets/lib/jasny/bootstrap-typeahead.js'></script>   
-	    <script src="{{ URL::to('admin') }}/assets/lib/todo/js/bootstrap.html"></script>
-	    <script src="{{ URL::to('admin') }}/assets/lib/todo/js/todocharts.html"></script> 
-	    <script src="{{ URL::to('admin') }}/assets/lib/justgage/justgage.1.0.1.js"></script>
-	    <script src="{{ URL::to('admin') }}/assets/lib/justgage/raphael.2.1.0.min.js"></script> 
-	    <script src="{{ URL::to('admin') }}/assets/lib/flot/jquery.flot.js"></script>
-	    <script src="{{ URL::to('admin') }}/assets/lib/flot/excanvas.js"></script>
-	    <script src="{{ URL::to('admin') }}/assets/lib/flot/jquery.flot.pie.js"></script>
-	    <script src="{{ URL::to('admin') }}/assets/lib/flot/jquery.flot.stack.js"></script>
-	    <script src="{{ URL::to('admin') }}/assets/js/responsive-tables.js"></script>
-	    <script src="{{ URL::to('admin') }}/assets/js/jquery.sparkline.js"></script>
+	   
 	    <script src="{{ URL::to('admin') }}/assets/js/bootstrap-slider.js"></script>
-	    <script src="{{ URL::to('admin') }}/assets/js/icheckdemo.js"></script>
+	  
 	    <script src="{{ URL::to('admin') }}/assets/js/charts.js"></script>
 	    <script src="{{ URL::to('admin') }}/assets/js/date.js"></script>
 	    <script src="{{ URL::to('admin') }}/assets/js/daterangepicker.js"></script>   
-	    <script src="{{ URL::to('admin') }}/assets/js/jquery.icheck.js"></script>    
+	    
 	    <script src="{{ URL::to('admin') }}/assets/js/wizard.js"></script>
 	    <script src="{{ URL::to('admin') }}/assets/js/jquery-ui-1.10.2.custom.min.js"></script>
 	    <script src="{{ URL::to('admin') }}/assets/js/wysihtml5-0.3.0.js"></script>
@@ -59,11 +48,13 @@
 	    <script src="{{ URL::to('admin') }}/assets/js/jquery.spellchecker.js"></script>
 	    <script src="{{ URL::to('admin') }}/assets/js/parsley.js"></script>
 	    <script src="{{ URL::to('admin') }}/assets/js/jquery.masonry.min.js"></script>
-	    <script src="{{ URL::to('admin') }}/assets/js/custom.js"></script>
+	   
+	    @include('backbone')
+	    <script src="{{ URL::to('admin') }}/assets/js/app.js"></script>
 	    <!-- end: JS -->
 	    
 	    <!-- Le fav and touch icons -->
-	    <link rel="shortcut icon" href="http://www.mickael-girault.fr/preview/assets/ico/favicon.ico">
+	    
 	    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ URL::to('admin') }}/assets/ico/apple-touch-icon-144-precomposed.html">
 	    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ URL::to('admin') }}/assets/ico/apple-touch-icon-114-precomposed.html">
 	    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ URL::to('admin') }}/assets/ico/apple-touch-icon-72-precomposed.html">
