@@ -17,48 +17,35 @@
 
 
 	    <div class="nav-collapse subnav-collapse collapse ">
-	        <a href="index.html" class="nav-header active" ><i class="icon-dashboard"></i>Dashboard</a>
-	        <a href="dashboard-dark.html" class="nav-header active" ><i class="icon-dashboard"></i>Dashboard #dark</a>
+	        <a href="#" class="nav-header active" ><i class="icon-dashboard"></i> Dashboard</a>
+	      
 
-	        <a href="#ui-elements" class="nav-header" data-toggle="collapse"><i class="icon-magic"></i>UI Elements<span class="label sidebar-label label-info"><i class="icon-angle-down"></i> </span></a>
+	        <a href="#ui-elements" class="nav-header" data-toggle="collapse"><i class="icon-magic"></i> Users<span class="label sidebar-label label-info"><i class="icon-angle-down"></i> </span></a>
 	        <ul id="ui-elements" class="nav nav-list collapse">
-	            <li><a href="grid.html"><i class="icon-tasks"></i> Grid Layout</a></li>
-	            <li><a href="button.html"><i class="icon-circle"></i> Buttons</a></li> 
-	            <li ><a href="block.html"><i class="icon-list-alt"></i> Block</a></li>
-	            <li><a href="interface.html"><i class="icon-laptop"></i> Interface elements</a></li>
-	            <li><a href="components.html"><i class="icon-table"></i> Components</a></li>
-	            <li><a href="icons.html"><i class="icon-info-sign"></i> Icons</a></li>
-	            <li><a href="typography.html"><i class="icon-font"></i> Typography</a></li>
+	            <li><a href="#users/new"><i class="icon-tasks"></i> All users</a></li>
+	            <li><a href="#users/roles"><i class="icon-circle"></i> New User</a></li> 
+	            <li><a href="#users/blocked"><i class="icon-list-alt"></i> Blocked Users</a></li>
 	        </ul>     
 
-	        <a href="#form" class="nav-header" data-toggle="collapse"><i class="icon-edit"></i>Forms<span class="label sidebar-label label-info"><i class="icon-angle-down"></i> </span></a>
+	        <a href="#form" class="nav-header" data-toggle="collapse"><i class="icon-edit"></i> Activities<span class="label sidebar-label label-info"><i class="icon-angle-down"></i> </span></a>
 	        <ul id="form" class="nav nav-list collapse">
-	            <li><a href="tables.html"><i class="icon-table"></i> Tables</a></li>
-	            <li><a href="validate.html"><i class="icon-ok"></i> Validate</a></li>
-	            <li><a href="wizard.html"><i class="icon-exchange"></i> Wizard</a></li>
-	            <li><a href="widgets.html"><i class="icon-reorder"></i> Widgets</a></li>
+	            <li><a href="#activities/categories"><i class="icon-table"></i> Categories</a></li>
+	            <li><a href="#activities/threads"><i class="icon-ok"></i> Threads</a></li>
+	            <li><a href="#activities/questions"><i class="icon-exchange"></i> Questions</a></li>
+	            <li><a href="#activities/settings"><i class="icon-reorder"></i> Settings</a></li>
 	        </ul>                     
 
 	        <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-signin"></i>Account<span class="label sidebar-label label-info"><i class="icon-angle-down"></i> </span></a>
 	        <ul id="accounts-menu" class="nav nav-list collapse">
-	            <li ><a href="sign-in.html"><i class="icon-signin"></i> Sign In</a></li>
-	            <li ><a href="sign-up.html"><i class="icon-signout"></i> Sign Up</a></li>
-	            <li ><a href="password.html"><i class="icon-lock"></i> Reset Password</a></li>
+	            <li ><a href="#account/options"><i class="icon-signin"></i> Options</a></li>
+	            <li ><a href="{{ URL::to('ap/logout') }}"><i class="icon-signout"></i> Logout</a></li>
+	            <li ><a href="#account/reset"><i class="icon-lock"></i> Reset Password</a></li>
 	        </ul>   
 
-	        <a href="#chart" class="nav-header" data-toggle="collapse"><i class="icon-bar-chart"></i>Charts & graphs<span class="label sidebar-label label-info"><i class="icon-angle-down"></i> </span></a>
-	        <ul id="chart" class="nav nav-list collapse">
-	            <li ><a href="charts.html"><i class="icon-picture"></i> Basic Charts</a></li>  
-	            <li ><a href="graphs.html"><i class="icon-signal"></i> Advanced Charts</a></li>   
-	        </ul>                         
+	       
+	        <a href="#inbox/open" class="nav-header" ><i class="icon-envelope"></i>Inbox</a>            
 
-	        <a href="inbox.html" class="nav-header" ><i class="icon-envelope"></i>Inbox</a>            
-
-	        <a href="calendar.html" class="nav-header" ><i class="icon-calendar"></i>Calendar</a>
-
-	        <a href="maps.html" class="nav-header" ><i class="icon-map-marker"></i>Maps</a>
-
-	        <a href="gallery.html" class="nav-header" ><i class="icon-camera"></i>Gallery</a>
+	        <a href="gallery.html" class="nav-header" ><i class="icon-camera"></i>BLOG</a>
 
 
 	    </div>
