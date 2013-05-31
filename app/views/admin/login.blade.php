@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  
- 
-<!-- Mirrored from www.mickael-girault.fr/preview/austra/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2013], Fri, 31 May 2013 14:12:03 GMT -->
-<head>
     
 		<!-- start: Meta -->
 	    <meta charset="utf-8">
@@ -99,8 +94,12 @@
     <div class="login">
 
       <div class="wrapper">
-        
-      
+        	@if(Session::get('error'))
+	      		<div class="alert alert-error">
+				  <strong><i class='icon-warning-sign'></i>&nbsp;Error!</strong> The username and password combination have failed. Or you don't
+				  have the right authorization to access the admin panel.
+				</div>
+			@endif
           <div class="block-dark sign-block">
 
             <h3>Login to your account</h3>
@@ -116,14 +115,14 @@
 
             <hr class="hr-dark">
 
-            <form data-validate="parsley" action="{{ URL::to('login') }}" id="sign-form" class="form-dark">
+            <form data-validate="parsley" action="{{ URL::to('login') }}" id="sign-form" class="form-dark" method="POST">
               <div class="input-prepend">      
                 <span class="add-dark"><i class="icon-user"></i></span>
-                <input type="text" name="fullname" data-required="true" placeholder="Username">
+                <input type="text" name="username" data-required="true" placeholder="Username">
               </div> 
               <div class="input-prepend">      
                 <span class="add-dark"><i class="icon-lock"></i></span>
-              <input type="password" data-required="true" placeholder="Password">
+              <input type="password" data-required="true" name="password" placeholder="Password">
               </div>                                
     
               <span id="sign-form-valid" onclick="javascript:$('#sign-form').parsley('validate');">
@@ -172,7 +171,5 @@
 
 
 </body>
-
-<!-- Mirrored from www.mickael-girault.fr/preview/austra/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2013], Fri, 31 May 2013 14:12:03 GMT -->
 </html>
 
