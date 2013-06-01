@@ -1,6 +1,7 @@
 <script src="{{ URL::to('admin') }}/assets/js/route.js"></script>
 <script src="{{ URL::to('admin') }}/assets/js/views.js"></script>
 <script src="{{ URL::to('admin') }}/assets/js/models.js"></script>
+<script src="{{ URL::to('admin') }}/assets/js/collections.js"></script>
 <script src="{{ URL::to('admin') }}/assets/js/app.js"></script>
 <footer>
 		<div class="clearfix">

@@ -13,4 +13,7 @@
 
 Route::controller('ap', 'APController');
 Route::controller('login', 'LoginController');
+Route::controller('api/users','UsersApiController');
+
+Route::resource('api/user','UserApiController');
 

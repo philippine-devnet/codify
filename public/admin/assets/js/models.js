@@ -1,8 +1,8 @@
-var UserModel = Backbone.Model.extend({
-	urlRoot: 'api/users',
+var User = Backbone.Model.extend({
+	urlRoot: 'api/user',
 	defaults:{
 		id			: 	"",
 		username	: 	"",
-		role		: 	"",
+		role_id		: 	"",
 	}
 });
