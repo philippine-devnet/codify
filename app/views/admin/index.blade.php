@@ -11,7 +11,7 @@
 	@include('admin.blocks.nav-top')
 	@include('admin.blocks.nav-left')
 	
-
+	
 	<div class="content content-dark">
 	    
 	    <div class="header">
@@ -55,14 +55,14 @@
 	    </ul><!-- breadcrumb -->           
 	    
 	    <div class="wrapper-content">
-	      <div class="container-fluid">
+	      <div class="container-fluid" id="main-container" spa-id='main-container'>
 
 
 
 	      </div>
 	    </div><!-- wrapper-content -->    
 	</div><!-- content -->   
-
+	
 	@include('admin.blocks.footer')
 
 	</body>

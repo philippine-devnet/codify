@@ -50,7 +50,9 @@
 	    <script src="{{ URL::to('admin') }}/assets/js/jquery.masonry.min.js"></script>
 	   
 	    @include('backbone')
-	    <script src="{{ URL::to('admin') }}/assets/js/app.js"></script>
+	    @include('admin.tpls.all_users')
+	    
+
 	    <!-- end: JS -->
 	    
 	    <!-- Le fav and touch icons -->

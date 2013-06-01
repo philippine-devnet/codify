@@ -22,7 +22,7 @@
 
 	        <a href="#ui-elements" class="nav-header" data-toggle="collapse"><i class="icon-magic"></i> Users<span class="label sidebar-label label-info"><i class="icon-angle-down"></i> </span></a>
 	        <ul id="ui-elements" class="nav nav-list collapse">
-	            <li><a href="#users/new"><i class="icon-tasks"></i> All users</a></li>
+	            <li><a href="#users/all"><i class="icon-tasks"></i> All users</a></li>
 	            <li><a href="#users/roles"><i class="icon-circle"></i> New User</a></li> 
 	            <li><a href="#users/blocked"><i class="icon-list-alt"></i> Blocked Users</a></li>
 	        </ul>     

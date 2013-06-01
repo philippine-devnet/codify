@@ -1,10 +1,8 @@
-var AppRouter = Backbone.Router.extend({
-		routes: {
-			":route/:action":"loadView",
-		}
-	});
 var app_router = new AppRouter;
-app_router.on('route:loadView',function(route, action){
-	
+app_router.on('route:allUsersView',function( page ){
+	var all_users_view = new AllUsersView( { el: $("[spa-id=main-container]"), page : page });
+});
+app_router.on('route:clearAll',function(){
+	$("[spa-id=main-container]").html("");
 });
  Backbone.history.start();
