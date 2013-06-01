@@ -21,3 +21,10 @@
 	-template for quick - user creation has been added
 	-NOTE: developers who do devnotes should use the following format
 	<DATE : TIME> <CODENAME | HANDLE>
+
+6/2/2013 6:29AM Printf:
+	- added some database - components, be sure to do the installation procedures
+	- finished saving data
+	- finished initial get user data
+	- fixed initial API of user data
+	- fixed some bugs

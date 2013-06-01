@@ -1,7 +1,7 @@
 <?php
 	class UsersApiController extends BaseController{
 		public function getAll(){
-			$scope = array(array('role_id','=','7'));
+			$scope = array(array('id','!=','0'));
 			return UserApi::pull($scope, e(Input::get('skip')), e(Input::get('take')));
 		}
 	}

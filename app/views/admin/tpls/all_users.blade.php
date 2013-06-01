@@ -20,10 +20,11 @@
                         <h3 id="myModalLabel2">Create New User</h3>
                     </div>
                     <div class="modal-body">
+                    	<div spa-tpl-id='new-user-tpl-alert' style="display:none;"></div>
                     	<div class="alert alert-info" style="line-height:120%; font-size:12px; font-weight:normal; text-align:justify; ">
                     		<strong>Notice: </strong>Admins who are editing and adding users here are automatically been confirmed by the system and thus will not be sent an email confirmation. Also, users profile, shall only be edited when saved.
                     	</div>
-						<form action="#">
+						<form action="javascript:void(0)" spa-id='new-user-form'>
                         	<div class="control-group">
                         		<label class="control-label" for="username">Username</label>
                         		<div class="controls">
@@ -86,7 +87,7 @@
 		                            <th>&nbsp;</th>                                          
 		                        </tr>
 		                    </thead>   
-		                    <tbody>
+		                    <tbody  spa-id='users-table'>
 		                    	<%
 		                    		_.each(data, function(user){
 		                    			%>

@@ -51,6 +51,7 @@
 	   
 	    @include('backbone')
 	    @include('admin.tpls.all_users')
+	    @include('admin.tpls.alerts')
 	    
 
 	    <!-- end: JS -->
