@@ -7,7 +7,7 @@
 		}
 
 		//pulling data, getting data from the model, or retrieving them via an API
-		public static function pull($scope = array(array('id','=','0')), $skip = NULL, $take = NULL){
+		public static function pull($scope = array(array('id','=','0')), $skip = NULL, $take = NULL, $order = array('id','desc')){
 
 			$class = self::className();
 			$data = $class::where('id','!=','0');
@@ -17,9 +17,9 @@
 					$data->where($s[0], $s[1], $s[2]);
 			}
 			if( $skip !== NULL && $take !== NULL )
-				return $data->skip($skip)->take($take)->get();
+				return $data->skip($skip)->take($take)->orderby($order[0], $order[1])->get();
 			else
-				return $data->get();
+				return $data->orderby($order[0], $order[1])->get();
 
 		}
 

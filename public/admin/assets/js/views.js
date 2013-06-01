@@ -4,18 +4,16 @@ AllUsersView = Backbone.View.extend({
 		_.bindAll(this);
 	},
 	render: 		function(){
-		var data = new UserCollection;
+		this.data = new Users;
 		var that = this;
-		data.fetch({data:{skip:0, take:10}, success:function(){
+		this.data.fetch({data:{skip:this.options.page*10, take:10}, success:function(){
 			var variables = {
 				page	: 	that.options.page,
-				data	: 	data,
+				data	: 	that.data.attributes,
 			};
-			data.each(function(user){
-				console.log(user.get("id"));
-			});
+			
 			var template = _.template( $("[spa-tpl-id=all_users]").html(), variables );
-			that.$el.html( template );
+			that.$el.html( template ).fadeIn(500);
 		}});
 		
 
