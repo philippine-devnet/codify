@@ -34,6 +34,7 @@ Core Developers:
 - [Gian Corleone] (https://www.facebook.com/consencius)
 - [Jeff Probe] (https://www.facebook.com/loophaze)
 - [Aaron Espallardo] (https://www.facebook.com/aaron.espallardo)
+- [Nico Romero Penaredo] (https://www.facebook.com/nico.penaredondo)
 
 Core Designer:
 - [Katrina Yabu] (https://www.facebook.com/katrinayabu)
