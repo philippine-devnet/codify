@@ -3,10 +3,13 @@ AllUsersView = Backbone.View.extend({
 		this.render();
 	},
 	render: 		function(){
-		var variables = {};
+		var variables = {
+				page	: 	this.options.page,
+
+		};
 		var template = _.template( $("[spa-tpl-id=all_users]").html(), variables );
 		this.$el.html( template );
-		alert(this.$page);
+
 	},
 
 });
