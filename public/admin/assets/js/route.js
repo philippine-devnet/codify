@@ -3,7 +3,8 @@ var AppRouter = Backbone.Router.extend({
 			"users/all(/:page)" 	: 	"allUsersView",
 			"users/new"		: 	"clearAll",
 			"users/blocked"	: 	"clearAll",
-			"users/roles"	: 	"clearAll"
+			"users/roles"	: 	"clearAll",
+			"user/:id"		: 	"clearAll"
 		}
 	});
 
