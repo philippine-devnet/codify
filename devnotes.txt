@@ -3,3 +3,15 @@
 	-php artisan migrate:install (if not installed yet)
 	-php artisan migrate
 	-php artisan db:seed
+
+6/1/2013 11:21PM Printf :
+	-added libraries folder
+	-added IRESTAPI
+	-added RestApiController
+	-added api/users route
+	-added api/user route
+	-added 2 controllers
+	-added models, views, collections .js
+	-before running run this
+		php composer.phar dump-autoload
+	
