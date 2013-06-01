@@ -15,7 +15,7 @@
 	-before running run this
 		php composer.phar dump-autoload
 	
-6/2/2013 3:22AM Printf :
+6/2/2013 3:22AM Printf : 
 	-added User retrieval and pagination to the system
 	-fadein and fadeout animation for changing routes have been added
 	-template for quick - user creation has been added
