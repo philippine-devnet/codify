@@ -13,7 +13,9 @@
                         </form>
                     </span>
                     <span class="pull-right">
-                        <button class="btn btn-danger"><i class="icon-chevron-left"></i></button>
+                    	<% if(page != 0){ %>
+                        	<button class="btn btn-danger"><i class="icon-chevron-left"></i></button>
+                        <% }%>
                         <button class="btn btn-danger"><i class="icon-chevron-right"></i></button>
                     </span>
                 </div>
@@ -22,7 +24,7 @@
                         <tr>
                             <th>Username</th>
                             <th>Date registered</th>
-                            <th>Location</th>
+                            <th>User Type</th>
                             <th>Status</th>                                          
                         </tr>
                     </thead>   
