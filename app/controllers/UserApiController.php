@@ -61,9 +61,9 @@ class UserApiController extends \BaseController {
 	public function show($id)
 	{
 		//
-		$user = User::find($id);
+		$user = User::with('Role','Profile')->find($id);
 		if(!$user){
-			App::abort('404','The use is not found.');
+			App::abort('404','The user is not found.');
 		}else{
 			return $user;
 		}

@@ -7,10 +7,10 @@
 		}
 
 		//pulling data, getting data from the model, or retrieving them via an API
-		public static function pull($scope = array(array('id','=','0')), $skip = NULL, $take = NULL, $order = array('id','desc')){
+		public static function pull($scope = array(array('id','=','0')), $skip = NULL, $take = NULL, $order = array('id','desc'), $eagerload = array()){
 
 			$class = self::className();
-			$data = $class::where('id','!=','0');
+			$data = $class::with($eagerload)->where('id','!=','0');
 
 			foreach( $scope as $s ){
 				if( count($s) == 3 )

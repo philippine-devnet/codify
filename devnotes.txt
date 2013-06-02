@@ -2,9 +2,11 @@
 	1. Developers should always encapsulate incoming requests
 	2. Eager-loading is a must
 	3. in creating database tables DO NOT FORGET to add a column "slug" - if there's a column title, name or anything that 
-		distingues ownership of a context
+		distingues ownership of a context. Also - in saving, the developer should run Str::slug() on the slug before saving.
 	4. in creating database tables DO NOT FORGET to add $table->timestamps()  - we may need it in the future
-
+	5. always do a migrate:rollback and always do a db:seed, when the devnote tells you too.
+	6. regarding Relational Models on Backbone - check http://backbonerelational.org/
+	
 	TODO:
 	1.	 fix the API class to have a better and more fluid class system. The class system right now is to static for a developer (~printf)
 	2.	further research soft-delete ~printf
@@ -45,3 +47,11 @@
 	- added database for category and thread
 	- finished category retrieval , output is in the console
 	- finished category adding
+
+6/3/2013 5:56am Printf:
+	- added backbone-relational
+	- added database seeds for profile
+	- added profile table
+	- added eagerloading functionality for RestAPI.php
+	- added eagerloading in user profile
+	- added eagerloading and relational functionality in backbone

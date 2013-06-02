@@ -12,6 +12,16 @@ class CreateProfileTable extends Migration {
 	public function up()
 	{
 		//
+		Schema::create('profiles',function($table){
+			$table->increments('id');
+			$table->integer('user_id')->unique();
+			$table->string('email_address');
+			$table->string('first_name');
+			$table->string('middle_name');
+			$table->string('last_name');
+			$table->string('occupation');
+			$table->timestamps();
+		});
 	}
 
 	/**
@@ -22,6 +32,7 @@ class CreateProfileTable extends Migration {
 	public function down()
 	{
 		//
+		Schema::drop('profiles');
 	}
 
 }

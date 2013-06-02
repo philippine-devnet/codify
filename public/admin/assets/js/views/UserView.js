@@ -7,7 +7,7 @@ UserView  = Backbone.View.extend({
 		this.user = new User({id: this.options.id});
 		this.user.fetch({
 			success : 	function(user){
-				console.log(user);
+				c
 			}
 		});
 	}
