@@ -1,6 +1,6 @@
 ## Pinoy IT Geeks | Activity Site
 
-### A Framework For Web Artisans
+### Developed by Developers for Developers
 
 This is the activity site for Pinoy IT Geeks. This website is in full development procedure. Also, this website has no current host
 and thus the developer or the *lurker* should have the know how on Laravel 4, Backbone.js and Twitter Bootstrap.
