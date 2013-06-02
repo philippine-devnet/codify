@@ -30,10 +30,12 @@ class CategoryApiController extends \BaseController {
 	public function store()
 	{
 			$newCategory = new Category;
-			$newCategory->name = Input::get('name');
-			$newCategory->description = Input::get('description');
+			$newCategory->name = e(Input::get('name'));
+			$newCategory->description = e(Input::get('description'));
 			$newCategory->save();
 			return $newCategory;
+			//dont forget to put e()
+			//~printf
 	}
 
 	/**

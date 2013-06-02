@@ -1,3 +1,15 @@
+/**NOTES**/
+	1. Developers should always encapsulate incoming requests
+	2. Eager-loading is a must
+	3. in creating database tables DO NOT FORGET to add a column "slug" - if there's a column title, name or anything that 
+		distingues ownership of a context
+	4. in creating database tables DO NOT FORGET to add $table->timestamps()  - we may need it in the future
+
+	TODO:
+	1.	 fix the API class to have a better and more fluid class system. The class system right now is to static for a developer (~printf)
+	2.	further research soft-delete ~printf
+	
+
 6:38am Printf : 
 	-installation procedures
 	-php artisan migrate:install (if not installed yet)
