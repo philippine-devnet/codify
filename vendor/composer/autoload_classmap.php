@@ -24,6 +24,7 @@ return array(
     'ClassPreloader\\Parser\\DirVisitor' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/DirVisitor.php',
     'ClassPreloader\\Parser\\FileVisitor' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/FileVisitor.php',
     'ClassPreloader\\Parser\\NodeTraverser' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/NodeTraverser.php',
+    'CreateCategoryTable' => $baseDir . '/app/database/migrations/2013_06_02_154229_create_category_table.php',
     'CreateRolesTable' => $baseDir . '/app/database/migrations/2013_05_31_221247_create_roles_table.php',
     'CreateUsersTable' => $baseDir . '/app/database/migrations/2013_05_31_062040_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
