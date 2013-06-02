@@ -21,10 +21,16 @@ php artisan db:seed
 - [x] Installed Admin Template
 - [x] Sliced Template
 - [x] Installed backbone
-- [ ] Create Users Template
-- [ ] Create New Users Template
+- [x] Create Users Template
+- [x] Create New Users Template
 - [ ] Activities Template
 - [ ] REST API
+
+
+
+To see the whole development process as well as the functionalities that were well established, as well as bugs and notifications
+from the developers. Please look at [Our Devnotes] (https://github.com/philippine-devnet/pitg-activity-restFul/blob/master/devnotes.txt)
+Please do know that we have our own lives that we could not establish this on our own.
 
 *The task list is not yet complete*
 
