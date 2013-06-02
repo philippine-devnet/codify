@@ -1,4 +1,4 @@
-/**NOTES**/
+##NOTES##
 	1. Developers should always encapsulate incoming requests
 	2. Eager-loading is a must
 	3. in creating database tables DO NOT FORGET to add a column "slug" - if there's a column title, name or anything that 
@@ -11,6 +11,12 @@
 	1.	 fix the API class to have a better and more fluid class system. The class system right now is to static for a developer (~printf)
 	2.	further research soft-delete ~printf
 	
+
+
+
+##BUGS##
+	1. click #/users/all -> then click a user -> then go back to users/all - there's an uncaught error, due to a problem with my initial coding still looking for the cause of the bug
+
 
 6:38am Printf : 
 	-installation procedures
@@ -55,3 +61,8 @@
 	- added eagerloading functionality for RestAPI.php
 	- added eagerloading in user profile
 	- added eagerloading and relational functionality in backbone
+
+6/3/2013 7:38am Printf:
+	- added user template
+	- added user viewing (still in coding phase)
+	- bug found - see bugs sections

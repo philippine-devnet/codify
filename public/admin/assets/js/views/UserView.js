@@ -4,10 +4,16 @@ UserView  = Backbone.View.extend({
 		_.bindAll(this);
 	},
 	render: 		function(){
-		this.user = new User({id: this.options.id});
-		this.user.fetch({
-			success : 	function(user){
-				c
+		var that = this;
+		user = new User({id: this.options.id});
+		user.fetch({
+			success : 	function(user){	
+				var variables = {
+					user : user
+				};
+				var template = _.template( $("[spa-tpl-id=current_user]").html(), user );
+				that.$el.html( template ).fadeIn(500);
+
 			}
 		});
 	}

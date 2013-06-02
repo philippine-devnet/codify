@@ -53,6 +53,7 @@
 	    @include('admin.tpls.all_users')
 	    @include('admin.tpls.alerts')
 	    @include('admin.tpls.category')
+	    @include('admin.tpls.current_user')
 	    
 
 	    <!-- end: JS -->
