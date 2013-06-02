@@ -4,6 +4,7 @@
 <script src="{{ URL::to('admin') }}/assets/js/collections.js"></script>
 <script src="{{ URL::to('admin') }}/assets/js/views/AllUsersView.js"></script>
 <script src="{{ URL::to('admin') }}/assets/js/views/UserView.js"></script>
+<script src="{{ URL::to('admin') }}/assets/js/views/CategoryView.js"></script>
 <script src="{{ URL::to('admin') }}/assets/js/app.js"></script>
 <footer>
 		<div class="clearfix">

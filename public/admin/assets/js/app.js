@@ -16,4 +16,12 @@ app_router.on('route:clearAll',function(){
 	$("[spa-id=main-container]").fadeOut(500).delay(500);
 	$("[spa-id=main-container]").html("").fadeIn(500);
 });
+
+app_router.on('route:categoryView',function(){
+
+	$("[spa-id=main-container]").fadeOut(500);
+	var category_view = new CategoryView( { el: $("[spa-id=main-container]") })
+
+});
+
  Backbone.history.start();

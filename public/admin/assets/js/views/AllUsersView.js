@@ -1,14 +1,21 @@
 AllUsersView = Backbone.View.extend({
+
 	initialize: 	function(){
+		
 		this.render();
 		_.bindAll(this);
 	},
+
 	events: 		{
 		'click [spa-id=new-user-submit]' : 'saveUser',
 		'submit [spa-id=new-user-form]'  : 'saveUser'
 	},
+
 	render: 		function(){
+
+
 		this.data = new Users;
+		console.log(this.data);
 		var that = this;
 		this.data.fetch({data:{skip:this.options.page*10, take:10}, success:function(){
 			var variables = {
@@ -18,9 +25,9 @@ AllUsersView = Backbone.View.extend({
 			
 			var template = _.template( $("[spa-tpl-id=all_users]").html(), variables );
 			that.$el.html( template ).fadeIn(500);
+
 		}});
 		
-
 	},
 	append 	: 		function(user){
 		$html = "<tr>";
