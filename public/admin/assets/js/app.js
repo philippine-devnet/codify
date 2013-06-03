@@ -17,10 +17,13 @@ app_router.on('route:clearAll',function(){
 	$("[spa-id=main-container]").html("").fadeIn(500);
 });
 
-app_router.on('route:categoryView',function(){
+app_router.on('route:categoryView',function(page){
 
+	if(page === null)
+		page = 0;
+	
 	$("[spa-id=main-container]").fadeOut(500);
-	var category_view = new CategoryView( { el: $("[spa-id=main-container]") })
+	var category_view = new CategoryView( { el: $("[spa-id=main-container]"), page: page })
 
 });
 

@@ -7,3 +7,20 @@ var User = Backbone.Model.extend({
 		updated_at	: 	null
 	}
 });
+
+
+var Category = Backbone.Model.extend({
+
+	urlRoot: "api/category",
+
+	defaults:{
+
+ 		name 		: 	"",
+ 		description	: 	"",
+ 		created_at 	: 	null,
+ 		updated_at 	: 	null
+
+	}
+
+
+});

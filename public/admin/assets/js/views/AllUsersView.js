@@ -1,7 +1,7 @@
 AllUsersView = Backbone.View.extend({
 
 	initialize: 	function(){
-		
+
 		this.render();
 		_.bindAll(this);
 	},
@@ -15,7 +15,7 @@ AllUsersView = Backbone.View.extend({
 
 
 		this.data = new Users;
-		console.log(this.data);
+
 		var that = this;
 		this.data.fetch({data:{skip:this.options.page*10, take:10}, success:function(){
 			var variables = {

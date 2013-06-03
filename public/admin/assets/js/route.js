@@ -5,7 +5,7 @@ var AppRouter = Backbone.Router.extend({
 			"users/blocked"	: 	"clearAll",
 			"users/roles"	: 	"clearAll",
 			"user/:id"		: 	"userView",
-			"activities/categories" : "categoryView"
+			"activities/categories(/:page)" : "categoryView"
 		}
 	});
 
