@@ -25,7 +25,7 @@
                     <div class="modal-body">
                     	<div spa-tpl-id='new-user-tpl-alert' style="display:none;"></div>
 
-						<form action="javascript:void(0)" spa-id='new-user-form'>
+						<form action="javascript:void(0)" spa-id='new-category-form'>
                         	<div class="control-group">
                         		<label class="control-label" for="category">Category</label>
                         		<div class="controls">
@@ -35,7 +35,7 @@
                         	<div class="control-group">
                         		<label class="control-label" for="description">Description</label>
                         		<div class="controls">
-									<textarea class="span12" name="description"/>
+									<textarea class="span12" name="description"></textarea>
                         		</div>
                         	</div>
 

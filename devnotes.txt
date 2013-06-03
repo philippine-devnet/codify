@@ -28,3 +28,8 @@
 	- finished initial get user data
 	- fixed initial API of user data
 	- fixed some bugs
+
+6/2/2013 8:45pm Aaron: aaronespallardo
+	- added database for category and thread
+	- finished category retrieval , output is in the console
+	- finished category adding

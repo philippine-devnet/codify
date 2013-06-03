@@ -16,6 +16,7 @@ Route::controller('login', 'LoginController');
 Route::controller('api/users','UsersApiController');
 Route::controller('api/categories','CategoryAllApiController');
 
-
+Route::resource('api/category','CategoryApiController');
 Route::resource('api/user','UserApiController');
+
 
