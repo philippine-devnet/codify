@@ -1,0 +1,136 @@
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body{
+color: white;
+background-color: #b4e391;
+background: #b4e391; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #b4e391 0%, #61c419 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#b4e391), color-stop(100%,#61c419)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #b4e391 0%,#61c419 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #b4e391 0%,#61c419 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #b4e391 0%,#61c419 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #b4e391 0%,#61c419 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61c419', endColorstr='#b4e391',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+/* Social Buttons */
+a.well {
+	background: #63c918;
+	border: none;
+	border-bottom: 1px solid #b4e391;
+	box-shadow: inset 0 2px 5px #339900;
+	padding: 7px 10px;
+	font-size: 12px;
+	color: #fbfbfb;
+}
+a.well:hover, a.well:active, a.well:focus {
+	color: white;
+}
+
+/* Navbar */
+.navbar-inner { 
+	background: #63c918;
+	filter: none;
+	border: none;
+}
+.navbar .brand {
+	font-weight: 100;
+	margin: 0;
+	letter-spacing: 1.5;
+}
+.navbar .brand > span {
+	color: yellow;
+}
+.navbar .brand, .navbar .nav > li > a {
+	text-shadow: none;
+	color: white;
+}
+.navbar .nav > li:hover {
+	border-top: 3px solid yellow;
+	line-height: 14px; 
+}
+.navbar .nav > li > a:hover, .navbar .nav > li > a:active, .navbar .nav > li > a:visited {
+	color: white;
+}
+.navbar-fixed-bottom .dropdown-menu {
+	top: auto;
+	bottom: 100%;
+}
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a {
+	background-color: #ff0;
+	filter: none;
+	background-image: none;
+	color: black;
+}
+
+/* Countdown */
+.container { position: relative; min-height: 100%; height: 100%; } /* Positioning the container relatively allow it's children to be positioned absolutely within it. */
+.centered {
+	position: absolute;
+	top: 35%;
+}
+div#countdown {
+	display: block;
+	padding: 0 20px;
+	width: 900px;
+	margin: 0 auto;
+}
+div#countdown h1 {
+	line-height: 1;
+	margin-right: 20px;
+	margin-left: -3px;
+	color: #fafafa;
+}
+div#countdown .message { 
+	float: left;
+	max-width: 500px;
+}
+ul#timer {
+	margin: 0;
+	padding: 0;
+}
+ul#timer > li {
+	float: left;
+	text-align: center;
+	margin: 5px;
+	list-style: none;
+	padding: 0;
+	color: #e5e5e5;
+	
+}
+ul#timer > li {
+	
+}
+ul#timer > li > span {
+	display: block;
+	font-size: 11px;
+	line-height: 18px;
+	border-radius: 4px;
+	padding: 5px 5px 0;
+	color: #339900;
+	text-shadow:  0 1px 0 #b4e391;
+}
+ul#timer > li > span.number {
+	font-size: 48px;
+	line-height: 48px;
+	border: none;
+	padding: 15px 5px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+	color: #fafafa;
+	border-top: 1px solid #555;
+	border-bottom: 1px solid #000;
+	text-shadow: 0 1px 0 #555, 0 -1px #000;
+	background: #2d2d2d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #2d2d2d 0%, #595959 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2d2d2d), color-stop(100%,#595959)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #2d2d2d 0%,#595959 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #2d2d2d 0%,#595959 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #2d2d2d 0%,#595959 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #2d2d2d 0%,#595959 100%); /* W3C */
+}
