@@ -10,3 +10,10 @@ var CategoryAll = Backbone.Model.extend({
 	model: Category, 
 
 });
+
+var Threads = Backbone.Model.extend({
+
+	url: "api/threads/all",
+	model: 	Thread,
+
+})

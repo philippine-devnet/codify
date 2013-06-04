@@ -19,18 +19,29 @@ var User = Backbone.RelationalModel.extend({
 });
 
 
-var Category = Backbone.Model.extend({
+var Category = Backbone.RelationalModel.extend({
 
 	urlRoot: "api/category",
 
 	defaults:{
 
- 		name 		: 	"",
- 		description	: 	"",
- 		created_at 	: 	null,
- 		updated_at 	: 	null
+ 		name 			: 	"",
+ 		description		: 	"",
+ 		created_at 		: 	null,
+ 		updated_at 		: 	null
 
-	}
+	},
+	relations: [{
+
+		type			: 	Backbone.HasMany,
+		key 			: 	'thread',
+		relatedModel	: 	'Thread',
+		reverseRelation : 	{
+			key 	: 	'category',
+		}
+
+
+	}]
 
 });
 
@@ -44,5 +55,18 @@ var Profile = Backbone.RelationalModel.extend({
 		occupation 		: 	"",
 		created_at	 	: 	null,
 		updated_at 		: 	null
+	}
+});
+
+var Threads = Backbone.RelationalModel.extend({
+
+	urlRoot: 	"api/thread",
+	defaults:{
+
+		title: 			:  	"",
+		category 		: 	0,
+		created_at 		: 	null,
+		updated_at 		: 	null
+		
 	}
 });
