@@ -1,4 +1,4 @@
-## Pinoy IT Geeks | Activity Site
+## Source code for www.codify.ph
 
 ### Developed by Developers for Developers
 
