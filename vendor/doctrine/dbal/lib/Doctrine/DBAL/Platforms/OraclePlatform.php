@@ -393,8 +393,6 @@ class OraclePlatform extends AbstractPlatform
     public function getCreateAutoincrementSql($name, $table, $start = 1)
     {
         $table = strtoupper($table);
-        $name = strtoupper($name);
-
         $sql   = array();
 
         $indexName  = $table . '_AI_PK';
@@ -410,7 +408,7 @@ BEGIN
   END IF;
 END;';
 
-        $sequenceName = $table . '_' . $name . '_SEQ';
+        $sequenceName = $table . '_SEQ';
         $sequence = new Sequence($sequenceName, $start);
         $sql[] = $this->getCreateSequenceSQL($sequence);
 
@@ -571,21 +569,9 @@ LEFT JOIN user_cons_columns r_cols
             }
 
             $column = $columnDiff->column;
-            $columnHasChangedComment = $columnDiff->hasChanged('comment');
-
-            /**
-             * Do not add query part if only comment has changed
-             */
-            if ( ! ($columnHasChangedComment && count($columnDiff->changedProperties) === 1)) {
-                $fields[] = $column->getQuotedName($this). ' ' . $this->getColumnDeclarationSQL('', $column->toArray());
-            }
-
-            if ($columnHasChangedComment) {
-                $commentsSQL[] = $this->getCommentOnColumnSQL(
-                    $diff->name,
-                    $column->getName(),
-                    $this->getColumnComment($column)
-                );
+            $fields[] = $column->getQuotedName($this). ' ' . $this->getColumnDeclarationSQL('', $column->toArray());
+            if ($columnDiff->hasChanged('comment') && $comment = $this->getColumnComment($column)) {
+                $commentsSQL[] = $this->getCommentOnColumnSQL($diff->name, $column->getName(), $comment);
             }
         }
 
