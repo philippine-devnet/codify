@@ -1,6 +1,6 @@
 <?php
 
-class UserApiController extends \BaseController {
+class UserApiController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -79,6 +79,11 @@ class UserApiController extends \BaseController {
 	public function edit($id)
 	{
 		//
+	}
+
+	public function missingMethod($parameters)
+	{
+	    //
 	}
 
 	/**

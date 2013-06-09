@@ -50,7 +50,7 @@ class QueryBuilder
     const STATE_CLEAN = 1;
 
     /**
-     * @var \Doctrine\DBAL\Connection DBAL Connection
+     * @var Doctrine\DBAL\Connection DBAL Connection
      */
     private $connection = null;
 
@@ -946,23 +946,37 @@ class QueryBuilder
         $query = 'SELECT ' . implode(', ', $this->sqlParts['select']) . ' FROM ';
 
         $fromClauses = array();
-        $knownAliases = array();
+        $joinsPending = true;
+        $joinAliases = array();
 
         // Loop through all FROM clauses
         foreach ($this->sqlParts['from'] as $from) {
-            $knownAliases[$from['alias']] = true;
-            $fromClause = $from['table'] . ' ' . $from['alias']
-                . $this->getSQLForJoins($from['alias'], $knownAliases);
+            $fromClause = $from['table'] . ' ' . $from['alias'];
+
+            if ($joinsPending && isset($this->sqlParts['join'][$from['alias']])) {
+                foreach ($this->sqlParts['join'] as $joins) {
+                    foreach ($joins as $join) {
+                        $fromClause .= ' ' . strtoupper($join['joinType'])
+                                     . ' JOIN ' . $join['joinTable'] . ' ' . $join['joinAlias']
+                                     . ' ON ' . ((string) $join['joinCondition']);
+                        $joinAliases[$join['joinAlias']] = true;
+                    }
+                }
+                $joinsPending = false;
+            }
 
             $fromClauses[$from['alias']] = $fromClause;
         }
 
+        // loop through all JOIN clauses for validation purpose
+        $knownAliases = array_merge($fromClauses,$joinAliases);
         foreach ($this->sqlParts['join'] as $fromAlias => $joins) {
             if ( ! isset($knownAliases[$fromAlias]) ) {
                 throw QueryException::unknownAlias($fromAlias, array_keys($knownAliases));
             }
         }
-        
+
+
         $query .= implode(', ', $fromClauses)
                 . ($this->sqlParts['where'] !== null ? ' WHERE ' . ((string) $this->sqlParts['where']) : '')
                 . ($this->sqlParts['groupBy'] ? ' GROUP BY ' . implode(', ', $this->sqlParts['groupBy']) : '')
@@ -1077,23 +1091,5 @@ class QueryBuilder
         $this->boundCounter++;
         $this->setParameter($this->boundCounter, $value, $type);
         return "?";
-    }
-
-    private function getSQLForJoins($fromAlias, array &$knownAliases)
-    {
-        $sql = '';
-
-        if (isset($this->sqlParts['join'][$fromAlias])) {
-            foreach ($this->sqlParts['join'][$fromAlias] as $join) {
-                $sql .= ' ' . strtoupper($join['joinType'])
-                      . ' JOIN ' . $join['joinTable'] . ' ' . $join['joinAlias']
-                      . ' ON ' . ((string) $join['joinCondition']);
-                $knownAliases[$join['joinAlias']] = true;
-
-                $sql .= $this->getSQLForJoins($join['joinAlias'], $knownAliases);
-            }
-        }
-
-        return $sql;
     }
 }
