@@ -26,7 +26,6 @@ return array(
     'HomeController' => $baseDir . '/app/controllers/HomeController.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
     'LoginController' => $baseDir . '/app/controllers/LoginController.php',
-<<<<<<< HEAD
     'Monolog\\Formatter\\ChromePHPFormatter' => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php',
     'Monolog\\Formatter\\FormatterInterface' => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/FormatterInterface.php',
     'Monolog\\Formatter\\GelfMessageFormatter' => $vendorDir . '/monolog/monolog/src/Monolog/Formatter/GelfMessageFormatter.php',
@@ -517,9 +516,7 @@ return array(
     'Psr\\Log\\LoggerInterface' => $vendorDir . '/psr/log/Psr/Log/LoggerInterface.php',
     'Psr\\Log\\LoggerTrait' => $vendorDir . '/psr/log/Psr/Log/LoggerTrait.php',
     'Psr\\Log\\NullLogger' => $vendorDir . '/psr/log/Psr/Log/NullLogger.php',
-=======
     'Profile' => $baseDir . '/app/models/Profile.php',
->>>>>>> 48fd993da639165d1fddcd657b204eccdf86fbee
     'RestAPI' => $baseDir . '/app/library/IRestApi.php',
     'Role' => $baseDir . '/app/models/Role.php',
     'RolesTableSeeder' => $baseDir . '/app/database/seeds/RolesTableSeeder.php',
