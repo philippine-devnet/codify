@@ -1085,6 +1085,20 @@ class Builder {
 	}
 
 	/**
+	 * Concatenate values of a given column as a string.
+	 *
+	 * @param  string  $column
+	 * @param  string  $glue
+	 * @return string
+	 */
+	public function implode($column, $glue = null)
+	{
+		if (is_null($glue)) return implode($this->lists($column));
+
+		return implode($glue, $this->lists($column));
+	}
+
+	/**
 	 * Get a paginator for the "select" statement.
 	 *
 	 * @param  int    $perPage
@@ -1262,7 +1276,7 @@ class Builder {
 		// Once we have executed the query, we will reset the aggregate property so
 		// that more select queries can be executed against the database without
 		// the aggregate value getting in the way when the grammar builds it.
-		$this->aggregate = null;
+		$this->columns = null; $this->aggregate = null;
 
 		if (isset($results[0]))
 		{
