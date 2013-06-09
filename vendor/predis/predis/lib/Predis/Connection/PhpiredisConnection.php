@@ -11,7 +11,6 @@
 
 namespace Predis\Connection;
 
-use Predis\ClientException;
 use Predis\NotSupportedException;
 use Predis\ResponseError;
 use Predis\ResponseQueued;
@@ -236,10 +235,10 @@ class PhpiredisConnection extends AbstractConnection
         $host = $parameters->host;
 
         if (ip2long($host) === false) {
-            if (($address = gethostbyname($host)) === $host) {
+            if (($addresses = gethostbynamel($host)) === false) {
                 $this->onConnectionError("Cannot resolve the address of $host");
             }
-            return $address;
+            return $addresses[array_rand($addresses)];
         }
 
         return $host;

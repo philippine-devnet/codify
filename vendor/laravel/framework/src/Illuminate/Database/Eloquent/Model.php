@@ -352,7 +352,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	 * @param  string  $connection
 	 * @return \Illuminate\Database\Eloquent\Builder
 	 */
-	public static function on($connection)
+	public static function on($connection = null)
 	{
 		// First we will just create a fresh instance of this model, and then we can
 		// set the connection on the model so that it is be used for the queries
@@ -679,7 +679,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	/**
 	 * Delete the model from the database.
 	 *
-	 * @return void
+	 * @return bool|null
 	 */
 	public function delete()
 	{
@@ -735,7 +735,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 
 		if ($this->softDelete)
 		{
-			$query->update(array(static::DELETED_AT => new DateTime));
+			$query->update(array(static::DELETED_AT => $this->freshTimestamp()));
 		}
 		else
 		{
@@ -746,7 +746,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	/**
 	 * Restore a soft-deleted model instance.
 	 *
-	 * @return void
+	 * @return bool|null
 	 */
 	public function restore()
 	{
@@ -923,7 +923,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	 * @param  string  $column
 	 * @param  int     $amount
 	 * @param  string  $method
-	 * @return void
+	 * @return int
 	 */
 	protected function incrementOrDecrement($column, $amount, $method)
 	{
@@ -1285,7 +1285,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	/**
 	 * Get a fresh timestamp for the model.
 	 *
-	 * @return mixed
+	 * @return DateTime
 	 */
 	public function freshTimestamp()
 	{
@@ -1324,7 +1324,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	{
 		return $this->newQuery(false);
 	}
- 
+
  	/**
  	 * Determine if the model instance has been soft-deleted.
  	 *
@@ -1763,12 +1763,14 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	 */
 	protected function getAccessibleAttributes()
 	{
+		$attributes = array_merge(array_fill_keys($this->getMutatedAttributes(), null), $this->attributes);
+
 		if (count($this->visible) > 0)
 		{
-			return array_intersect_key($this->attributes, array_flip($this->visible));
+			return array_intersect_key($attributes, array_flip($this->visible));
 		}
 
-		return array_diff_key($this->attributes, array_flip($this->hidden));
+		return array_diff_key($attributes, array_flip($this->hidden));
 	}
 
 	/**
@@ -2112,8 +2114,8 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	/**
 	 * Get the model's original attribute values.
 	 *
-	 * @param  string|null  $key
-	 * @param  mixed  $default
+	 * @param  string  $key
+	 * @param  mixed   $default
 	 * @return array
 	 */
 	public function getOriginal($key = null, $default = null)
@@ -2278,7 +2280,7 @@ abstract class Model implements ArrayAccess, ArrayableInterface, JsonableInterfa
 	/**
 	 * Set the event dispatcher instance.
 	 *
-	 * @param  \Illuminate\Events\Dispatcher
+	 * @param  \Illuminate\Events\Dispatcher  $dispatcher
 	 * @return void
 	 */
 	public static function setEventDispatcher(Dispatcher $dispatcher)

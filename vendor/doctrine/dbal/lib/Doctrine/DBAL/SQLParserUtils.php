@@ -137,7 +137,7 @@ class SQLParserUtils
                     array_slice($types, $needle + 1)
                 );
 
-                $expandStr  = $count ? implode(", ", array_fill(0, $count, "?")) : 'NULL';
+                $expandStr  = implode(", ", array_fill(0, $count, "?"));
                 $query      = substr($query, 0, $needlePos) . $expandStr . substr($query, $needlePos + 1);
 
                 $paramOffset += ($count - 1); // Grows larger by number of parameters minus the replaced needle.
@@ -167,7 +167,7 @@ class SQLParserUtils
             }
 
             $count      = count($value);
-            $expandStr  = $count > 0 ? implode(', ', array_fill(0, $count, '?')) : 'NULL';
+            $expandStr  = $count > 0 ? implode(', ', array_fill(0, $count, '?')) : '?';
 
             foreach ($value as $val) {
                 $paramsOrd[] = $val;

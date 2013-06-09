@@ -343,7 +343,7 @@ class BelongsToMany extends Relation {
 	{
 		$key = $this->getRelated()->getKeyName();
 
-		$columns = array($this->getRelatedUpdated() => new DateTime);
+		$columns = $this->getRelatedFreshUpdate();
 
 		// If we actually have IDs for the relation, we will run the query to update all
 		// the related model's timestamps, to make sure these all reflect the changes
@@ -517,8 +517,32 @@ class BelongsToMany extends Relation {
 	{
 		foreach ($records as $id => $attributes)
 		{
-			if ( ! in_array($id, $current)) $this->attach($id, $attributes, $touch);
+			if ( ! in_array($id, $current))
+			{
+				$this->attach($id, $attributes, $touch);
+			}
+			elseif (count($attributes) > 0)
+			{
+				$this->updateExistingPivot($id, $attributes, $touch);
+			}
 		}
+	}
+
+	/**
+	 * Update an existing pivot reord on the table.
+	 *
+	 * @param  mixed  $id
+	 * @param  array  $attributes
+	 * @param  bool   $touch
+	 * @return void
+	 */
+	protected function updateExistingPivot($id, array $attributes, $touch)
+	{
+		$attributes = $this->setTimestampsOnAttach($attributes, true);
+
+		$this->newPivotStatementForId($id)->update($attributes);
+
+		if ($touch) $this->touchIfTouching();
 	}
 
 	/**
@@ -622,10 +646,26 @@ class BelongsToMany extends Relation {
 		// provide us with a fresh timestamp in this model's preferred format.
 		if ($timed)
 		{
-			$record[$this->createdAt()] = $this->parent->freshTimestamp();
-
-			$record[$this->updatedAt()] = $record[$this->createdAt()];
+			$record = $this->setTimestampsOnAttach($record);
 		}
+
+		return $record;
+	}
+
+	/**
+	 * Set the creation and update timstamps on an attach record.
+	 *
+	 * @param  array  $record
+	 * @param  bool   $exists
+	 * @return array
+	 */
+	protected function setTimestampsOnAttach(array $record, $exists = false)
+	{
+		$fresh = $this->parent->freshTimestamp();
+
+		if ( ! $exists) $record[$this->createdAt()] = $fresh;
+
+		$record[$this->updatedAt()] = $fresh;
 
 		return $record;
 	}
@@ -718,6 +758,21 @@ class BelongsToMany extends Relation {
 	}
 
 	/**
+	 * Get a new pivot statement for a given "other" ID.
+	 *
+	 * @param  mixed  $id
+	 * @return \Illuminate\Database\Query\Builder
+	 */
+	protected function newPivotStatementForId($id)
+	{
+		$pivot = $this->newPivotStatement();
+
+		$key = $this->parent->getKey();
+
+		return $pivot->where($this->foreignKey, $key)->where($this->otherKey, $id);
+	}
+
+	/**
 	 * Create a new pivot model instance.
 	 *
 	 * @param  array  $attributes
@@ -774,9 +829,9 @@ class BelongsToMany extends Relation {
 	 *
 	 * @return string
 	 */
-	public function getRelatedUpdated()
+	public function getRelatedFreshUpdate()
 	{
-		return $this->getRelated()->getUpdatedAtColumn();
+		return array($this->related->getUpdatedAtColumn() => $this->related->freshTimestamp());
 	}
 
 	/**

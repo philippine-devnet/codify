@@ -34,33 +34,15 @@ use Doctrine\DBAL\Schema\TableDiff,
 class PostgreSqlPlatform extends AbstractPlatform
 {
     /**
-     * @var bool
-     */
-    private $useBooleanTrueFalseStrings = true;
-
-    /**
-     * PostgreSQL has different behavior with some drivers
-     * with regard to how booleans have to be handled.
-     *
-     * Enables use of 'true'/'false' or otherwise 1 and 0 instead.
-     *
-     * @param bool $flag
-     */
-    public function setUseBooleanTrueFalseStrings($flag)
-    {
-        $this->useBooleanTrueFalseStrings = (bool)$flag;
-    }
-
-    /**
      * {@inheritDoc}
      */
     public function getSubstringExpression($value, $from, $length = null)
     {
         if ($length === null) {
-            return 'SUBSTRING(' . $value . ' FROM ' . $from . ')';
+            return 'SUBSTR(' . $value . ', ' . $from . ')';
         }
 
-        return 'SUBSTRING(' . $value . ' FROM ' . $from . ' FOR ' . $length . ')';
+        return 'SUBSTR(' . $value . ', ' . $from . ', ' . $length . ')';
     }
 
     /**
@@ -169,14 +151,6 @@ class PostgreSqlPlatform extends AbstractPlatform
      * {@inheritDoc}
      */
     public function prefersSequences()
-    {
-        return true;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function hasNativeGuidType()
     {
         return true;
     }
@@ -348,9 +322,7 @@ class PostgreSqlPlatform extends AbstractPlatform
             $query .= ' NOT DEFERRABLE';
         }
 
-        if (($foreignKey->hasOption('feferred') && $foreignKey->getOption('feferred') !== false)
-            || ($foreignKey->hasOption('deferred') && $foreignKey->getOption('deferred') !== false)
-        ) {
+        if ($foreignKey->hasOption('feferred') && $foreignKey->getOption('feferred') !== false) {
             $query .= ' INITIALLY DEFERRED';
         } else {
             $query .= ' INITIALLY IMMEDIATE';
@@ -432,12 +404,8 @@ class PostgreSqlPlatform extends AbstractPlatform
                 }
             }
 
-            if ($columnDiff->hasChanged('comment')) {
-                $commentsSQL[] = $this->getCommentOnColumnSQL(
-                    $diff->name,
-                    $column->getName(),
-                    $this->getColumnComment($column)
-                );
+            if ($columnDiff->hasChanged('comment') && $comment = $this->getColumnComment($column)) {
+                $commentsSQL[] = $this->getCommentOnColumnSQL($diff->name, $column->getName(), $comment);
             }
 
             if ($columnDiff->hasChanged('length')) {
@@ -465,16 +433,6 @@ class PostgreSqlPlatform extends AbstractPlatform
         }
 
         return array_merge($sql, $tableSql, $columnSql);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getCommentOnColumnSQL($tableName, $columnName, $comment)
-    {
-        $comment = $comment === null ? 'NULL' : "'$comment'";
-
-        return "COMMENT ON COLUMN $tableName.$columnName IS $comment";
     }
 
     /**
@@ -554,10 +512,6 @@ class PostgreSqlPlatform extends AbstractPlatform
      */
     public function convertBooleans($item)
     {
-        if ( ! $this->useBooleanTrueFalseStrings) {
-            return parent::convertBooleans($item);
-        }
-
         if (is_array($item)) {
             foreach ($item as $key => $value) {
                 if (is_bool($value) || is_numeric($item)) {
@@ -669,14 +623,6 @@ class PostgreSqlPlatform extends AbstractPlatform
     /**
      * {@inheritDoc}
      */
-    public function getGuidExpression()
-    {
-        return 'UUID_GENERATE_V4()';
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     protected function _getCommonIntegerTypeDeclarationSQL(array $columnDef)
     {
         return '';
@@ -774,7 +720,6 @@ class PostgreSqlPlatform extends AbstractPlatform
             '_varchar'      => 'string',
             'char'          => 'string',
             'bpchar'        => 'string',
-            'inet'          => 'string',
             'date'          => 'date',
             'datetime'      => 'datetime',
             'timestamp'     => 'datetime',

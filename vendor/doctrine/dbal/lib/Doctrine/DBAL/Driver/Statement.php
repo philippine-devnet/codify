@@ -19,6 +19,8 @@
 
 namespace Doctrine\DBAL\Driver;
 
+use \PDO;
+
 /**
  * Statement interface.
  * Drivers must implement this interface.
