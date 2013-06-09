@@ -90,14 +90,6 @@ class ForeignKeyConstraint extends AbstractAsset implements Constraint
     }
 
     /**
-     * @return Table
-     */
-    public function getLocalTable()
-    {
-        return $this->_localTable;
-    }
-
-    /**
      * @return array
      */
     public function getLocalColumns()
