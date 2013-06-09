@@ -1079,6 +1079,7 @@ return array(
     'Predis\\Session\\SessionHandler' => $vendorDir . '/predis/predis/lib/Predis/Session/SessionHandler.php',
     'Predis\\Transaction\\AbortedMultiExecException' => $vendorDir . '/predis/predis/lib/Predis/Transaction/AbortedMultiExecException.php',
     'Predis\\Transaction\\MultiExecContext' => $vendorDir . '/predis/predis/lib/Predis/Transaction/MultiExecContext.php',
+    'Profile' => $baseDir . '/app/models/Profile.php',
     'Profiler\\Facades\\Profiler' => $vendorDir . '/loic-sharma/profiler/src/Profiler/Facades/Profiler.php',
     'Profiler\\Logger\\Logger' => $vendorDir . '/loic-sharma/profiler/src/Profiler/Logger/Logger.php',
     'Profiler\\Logger\\ProfilerLoggerInterface' => $vendorDir . '/loic-sharma/profiler/src/Profiler/Logger/ProfilerLoggerInterface.php',
