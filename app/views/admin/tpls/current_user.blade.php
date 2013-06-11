@@ -36,7 +36,7 @@
             <div class="block-heading">
                 <a href="#collapse-table-search-dark" data-toggle="collapse">Additional Info</a>
                 <div id="collapse-table-search-dark" class="collapse in" style="padding:10px;">
-                    <form action="javascript:void(0)">
+                    <form action="javascript:void(0)" spa-id="user-profile-form">
                         <div class="span12">
                             <div class="control-group span4">
                                 <label class="control-label" for="first_name">First Name</label>
@@ -67,7 +67,7 @@
                         </div>
                         <div class="span12">
                             <div class="span4 offset4">
-                                 <button class="btn btn-small btn-danger" type="button">Save</button>
+                                 <button class="btn btn-small btn-danger" type="button" spa-id='profile-save-btn'>Save</button>
                             </div>
                         </div>
                     </form>

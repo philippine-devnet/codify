@@ -88,3 +88,7 @@
 	  e.g. table: Users - Model: "User"
 	- do not override the protected $table - eloquent should be able to fetch it properly
 	- table names in unix environment are case-sensitive thus - Category != category
+
+	-saving already on the process
+	##NOTES##
+	-check events
