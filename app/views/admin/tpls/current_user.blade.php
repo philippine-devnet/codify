@@ -37,10 +37,12 @@
                 <a href="#collapse-table-search-dark" data-toggle="collapse">Additional Info</a>
                 <div id="collapse-table-search-dark" class="collapse in" style="padding:10px;">
                     <form action="javascript:void(0)" spa-id="user-profile-form">
+
                         <div class="span12">
                             <div class="control-group span4">
                                 <label class="control-label" for="first_name">First Name</label>
                                 <div class="controls">
+                                     {{ Form::token() }}
                                     <input type="text" name="first_name" class="input-block-level" value="<%=user.get('profile').get('first_name')%>"/>
                                 </div>
                             </div>
@@ -67,10 +69,13 @@
                         </div>
                         <div class="span12">
                             <div class="span4 offset4">
-                                 <button class="btn btn-small btn-danger" type="button" spa-id='profile-save-btn'>Save</button>
+                                 <button class="btn btn-small btn-primary" type="button" spa-id='profile-save-btn'>Save</button>
                             </div>
                         </div>
                     </form>
+                    <div style="padding:10px;">
+                        <div spa-tpl-id='saved-user-tpl-alert' style="display:none;"></div>
+                    </div>
                 </div>
             </div>
         </div>
