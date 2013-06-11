@@ -16,13 +16,13 @@
 	},
 	"scripts": {
 		"pre-update-cmd": [
-			"php artisan clear-compiled"
+			"sudo /opt/lampp/bin/php artisan clear-compiled"
 		],
 		"post-install-cmd": [
-			"php artisan optimize"
+			"sudo /opt/lampp/bin/php artisan optimize"
 		],
 		"post-update-cmd": [
-			"php artisan optimize"
+			"sudo /opt/lampp/bin/php artisan optimize"
 		]
 	},
 	"config": {
