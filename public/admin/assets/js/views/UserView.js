@@ -9,7 +9,14 @@ UserView  = Backbone.View.extend({
 	saveProfile: 	function(){
 		var user = this.user;
 		var profile = this.user.get('profile');
-		
+		var data = $("[spa-id=user-profile-form]").serializeObject();
+		profile.set(data);
+		profile.save(data,{
+			wait	: 	true,
+			success : 	function(model){
+				profile = model;
+			}
+		});
 	},
 	render: 		function(){
 		

@@ -91,4 +91,8 @@
 
 	-saving already on the process
 	##NOTES##
-	-check events
+	- check events
+	- added profile api
+
+	- added serializeToObject() c/o stackoverflow - this is needed to easily set a form into a JSON - we need to set the data into json so that backbone can render it and save it to the db
+	- user profile is already saving
