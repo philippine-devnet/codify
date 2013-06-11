@@ -4,4 +4,11 @@
 			$scope = array(array('id','!=','0'));
 			return UserApi::pull($scope, e(Input::get('skip')), e(Input::get('take')),array('id','desc'),array('Role','Profile'));
 		}
+		public function getIndex(){
+			
+		}
+		public function missingMethod($parameters)
+		{
+		    //
+		}
 	}

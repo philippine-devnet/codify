@@ -13,11 +13,16 @@
 
 Route::controller('ap', 'APController');
 Route::controller('login', 'LoginController');
-Route::controller('/', 'HomeController');
-Route::controller('api/users','UsersApiController');
-Route::controller('api/categories','CategoryAllApiController');
 
-Route::resource('api/category','CategoryApiController');
-Route::resource('api/user','UserApiController');
+Route::get('', 'HomeController@showIndex');
+
+
+
+Route::group(array('prefix'=>'api'),function(){
+	Route::controller('users','UsersApiController');
+	Route::controller('categories','CategoryAllApiController');
+	Route::resource('category','CategoryApiController');
+	Route::resource('user','UserApiController');
+});
 
 
