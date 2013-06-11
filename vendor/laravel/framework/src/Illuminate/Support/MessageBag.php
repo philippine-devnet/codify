@@ -216,10 +216,23 @@ class MessageBag implements ArrayableInterface, Countable, JsonableInterface, Me
 	 * Set the default message format.
 	 *
 	 * @param  string  $format
+	 * @return \Illuminate\Support\MessageBag
 	 */
 	public function setFormat($format = ':message')
 	{
 		$this->format = $format;
+
+		return $this;
+	}
+
+	/**
+	 * Determine if the message bag has any messages.
+	 *
+	 * @return bool
+	 */
+	public function isEmpty()
+	{
+		return ! $this->any();
 	}
 
 	/**

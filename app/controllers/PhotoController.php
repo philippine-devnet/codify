@@ -1,17 +1,15 @@
 <?php
 
-class UserApiController extends BaseController {
+class PhotoController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function showIndex()
 	{
 		//
-		
-		
 	}
 
 	/**
@@ -24,8 +22,6 @@ class UserApiController extends BaseController {
 		//
 	}
 
-
-
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -33,24 +29,7 @@ class UserApiController extends BaseController {
 	 */
 	public function store()
 	{
-		if(!Auth::user()){
-			App::abort(401, 'You are not authorized.');
-		}
-		$rules = array(
-				'username'	=>	'unique:users,username',
-				'password'	=>	'required'
-			);
-		$input = Input::all();
-		$validation = Validator::make($input, $rules);
-		if($validation->fails()){
-			App::abort(500, 'You are not authorized.');
-		}else{
-			$newUser = new User;
-			$newUser->username = Input::get('username');
-			$newUser->password = Hash::make('password');
-			$newUser->save();
-			return $newUser;
-		}
+		//
 	}
 
 	/**
@@ -62,13 +41,6 @@ class UserApiController extends BaseController {
 	public function show($id)
 	{
 		//
-		$user = User::with('Role','Profile')->find($id);
-		if(!$user){
-			App::abort('404','The user is not found.');
-		}else{
-			return $user;
-		}
-
 	}
 
 	/**
@@ -80,11 +52,6 @@ class UserApiController extends BaseController {
 	public function edit($id)
 	{
 		//
-	}
-
-	public function missingMethod($parameters)
-	{
-	    //
 	}
 
 	/**
