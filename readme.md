@@ -42,8 +42,6 @@ Core Developers:
 - [Aaron Espallardo] (https://www.facebook.com/aaron.espallardo)
 - [Nico Romero Penaredo] (https://www.facebook.com/nico.penaredondo)
 
-Core Designer:
-- [Katrina Yabu] (https://www.facebook.com/katrinayabu)
 
 Documentation:
 - [Current Documentation] (https://dl.dropboxusercontent.com/u/74960080/pitg-project.docx)
