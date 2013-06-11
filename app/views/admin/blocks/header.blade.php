@@ -48,6 +48,7 @@
 	    <script src="{{ URL::to('admin') }}/assets/js/jquery.spellchecker.js"></script>
 	    <script src="{{ URL::to('admin') }}/assets/js/parsley.js"></script>
 	    <script src="{{ URL::to('admin') }}/assets/js/jquery.masonry.min.js"></script>
+	    <script src="{{ URL::to('admin') }}/assets/js/iframe.jquery.js"></script>
 	   	<script type="text/javascript">
 	   		jQuery.fn.serializeObject = function() {
 			  var arrayData, objectData;

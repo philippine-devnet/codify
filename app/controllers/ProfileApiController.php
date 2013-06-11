@@ -67,6 +67,11 @@ class ProfileApiController extends \BaseController {
 	public function update($id)
 	{
 		//
+		if(Input::get('_token') != Session::token() || 
+			(Auth::user()->role->role_name != 'Admin' && 
+			Auth::user()->profile->id != $id))
+			App::abort('403',"Your credentials are not able to save on this data");
+		
 		$profile = Profile::find($id);
 		if(!$profile)
 			App::abort('404','An Error has occured! Profile {$id} can\'t be found. ');

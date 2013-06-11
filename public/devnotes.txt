@@ -96,3 +96,6 @@
 
 	- added serializeToObject() c/o stackoverflow - this is needed to easily set a form into a JSON - we need to set the data into json so that backbone can render it and save it to the db
 	- user profile is already saving
+	- added security on storing data - ProfileApiController
+	- added profile alert when being saved
+	- added jquery.iframe.transport.js - used for "tweaking" ajax upload
