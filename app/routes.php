@@ -11,8 +11,8 @@
 |
 */
 
-Route::controller('ap', 'APController');
-Route::controller('login', 'LoginController');
+Route::controller('ap.php', 'APController');
+Route::controller('login.php', 'LoginController');
 
 Route::get('', 'HomeController@showIndex');
 
