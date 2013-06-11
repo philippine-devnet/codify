@@ -23,6 +23,7 @@ Route::group(array('prefix'=>'api'),function(){
 	Route::controller('categories','CategoryAllApiController');
 	Route::resource('category','CategoryApiController');
 	Route::resource('user','UserApiController');
+	Route::resource('profile','ProfileApiController');
 });
 
 
