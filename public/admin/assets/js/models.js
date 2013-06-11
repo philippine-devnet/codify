@@ -14,10 +14,28 @@ var User = Backbone.RelationalModel.extend({
 		reverseRelation	: 	{
 			key 	: 	"user", 	
 		}
+	},{
+
+		type 			: 	Backbone.HasOne,
+		key 			: 	'role',
+		relatedModel 	: 	'Role',
+		reverseRelation : 	{
+			key 		: "user",
+		}
+
 	}],
 
 });
 
+var Role = Backbone.RelationalModel.extend({
+	urlRoot: 	"api/role",
+	defaults:{
+		role_name		: 	"",
+		role_slug 		: 	"",
+		created_at		: 	null,
+		updated_at 		: 	null
+	}
+});
 
 var Category = Backbone.RelationalModel.extend({
 

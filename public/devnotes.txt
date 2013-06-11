@@ -79,4 +79,12 @@
 	-fixed effing BUG that took me 10 days to fix - fucking bug was just a wrong route!
 
 6/14/2013 3:49PM PrintF:
-	-for fun  - made all controllers to be used to have a .php after it - so noobs think we dont have a framework - what you think guys?
+	- for fun  - made all controllers to be used to have a .php after it - so noobs think we dont have a framework - what you think guys?
+	- added data-retrieval for backbone relational on User.
+	- follow backbone-relational conventions to be able to easily fetch all data (don't forget to eager load)
+
+	##NOTES##
+	- please follow the plural-singular conventions on database - model naming.
+	  e.g. table: Users - Model: "User"
+	- do not override the protected $table - eloquent should be able to fetch it properly
+	- table names in unix environment are case-sensitive thus - Category != category
