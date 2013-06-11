@@ -1,14 +1,11 @@
 <?php
 	class UsersApiController extends BaseController{
-		public function getAll(){
+		public function getAll($skip = 0, $take = 10){
 			$scope = array(array('id','!=','0'));
-			return UserApi::pull($scope, e(Input::get('skip')), e(Input::get('take')),array('id','desc'),array('Role','Profile'));
+			$skip = Input::get('skip') ? Input::get('skip') : $skip;
+			$take = Input::get('take') ? Input::get('take') : $take;
+			return UserApi::pull($scope, e($skip), e($take),array('id','desc'),array('Role','Profile'));
 		}
-		public function getIndex(){
-			
-		}
-		public function missingMethod($parameters)
-		{
-		    //
-		}
+		
+		
 	}

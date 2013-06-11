@@ -77,3 +77,6 @@
 
 6/14/2013 Printf:
 	-fixed effing BUG that took me 10 days to fix - fucking bug was just a wrong route!
+
+6/14/2013 3:49PM PrintF:
+	-for fun  - made all controllers to be used to have a .php after it - so noobs think we dont have a framework - what you think guys?

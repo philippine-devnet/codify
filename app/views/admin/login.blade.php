@@ -115,7 +115,7 @@
 
             <hr class="hr-dark">
 
-            <form data-validate="parsley" action="{{ URL::to('login') }}" id="sign-form" class="form-dark" method="POST">
+            <form data-validate="parsley" action="{{ URL::to('login.php') }}" id="sign-form" class="form-dark" method="POST">
               <div class="input-prepend">      
                 <span class="add-dark"><i class="icon-user"></i></span>
                 <input type="text" name="username" data-required="true" placeholder="Username">
