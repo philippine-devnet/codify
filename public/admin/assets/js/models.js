@@ -58,12 +58,12 @@ var Profile = Backbone.RelationalModel.extend({
 	}
 });
 
-var Threads = Backbone.RelationalModel.extend({
+var Thread = Backbone.RelationalModel.extend({
 
 	urlRoot: 	"api/thread",
 	defaults:{
 
-		title: 			:  	"",
+		title 			:  	"",
 		category 		: 	0,
 		created_at 		: 	null,
 		updated_at 		: 	null
