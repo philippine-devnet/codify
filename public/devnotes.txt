@@ -106,3 +106,8 @@
 	- you may comment regarding the matter - the only use of this is to be able to look cool when backbone.js is added
 	- head template for front end is already being customized
 	- check /!/login to see edits
+
+	##NOTE - IMPORTANT##
+	- bug fixed
+	- UserView.js goto line: 38, all instantiation of any models that extend backbone-relational
+	- should use findOrCreate - user should not use new User() but User.findOrCreate
