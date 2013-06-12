@@ -34,7 +34,8 @@ UserView  = Backbone.View.extend({
 	},
 	render: 		function(){
 		
-		this.user = new User({id: this.options.id});
+		// this.user = new User({id: this.options.id});
+		this.user = User.findOrCreate({id:this.options.id});
 		var that = this;
 
 		this.user.fetch({

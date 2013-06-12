@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title spa-id='document-title'>Codify PH | Beta Test</title>
+	<title spa-id='document-title'>{{ isset($title) ? $title : "Codify PH | Beta Test" }}</title>
 
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('css') }}/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('css') }}/bootstrap-responsive.min.css">
