@@ -17,6 +17,7 @@ class CreateThreadTable extends Migration {
 			$table->increments('id');
 			$table->string('title');
 			$table->integer('category');
+			$table->slug('slug');
 			$table->timestamps();
 		});
 	}

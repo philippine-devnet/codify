@@ -35,7 +35,7 @@ class CategoryTableSeeder extends Seeder{
 			$c[] = array(
 
 				'name'=>$value,
-				'desc'=>$description[$key]
+				'desc'=>$description[$key],
 
 			);
 
@@ -46,6 +46,7 @@ class CategoryTableSeeder extends Seeder{
 			$cat = new Category;
 			$cat->name = $value['name'];
 			$cat->description = $value['desc'];
+			$cat->slug = Str::slug($value['name']);
 			$cat->save();
 		}
 
