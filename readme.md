@@ -42,6 +42,8 @@ Core Developers:
 - [Aaron Espallardo] (https://www.facebook.com/aaron.espallardo)
 - [Nico Romero Penaredo] (https://www.facebook.com/nico.penaredondo)
 
+Designers:
+- [Zeus Aranzo] (https://www.facebook.com/unikkbass)
 
 Documentation:
 - [Current Documentation] (https://dl.dropboxusercontent.com/u/74960080/pitg-project.docx)
