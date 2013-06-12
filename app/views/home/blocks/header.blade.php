@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width">
 		<title spa-id='document-title'>{{ isset($title) ? $title : "Codify PH | Beta Test" }}</title>
 
-		<link rel="stylesheet" type="text/css" href="{{ URL::to('boilerplate') }}/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="{{ URL::to('boilerplate') }}/css/bootstrap.css">
 		 <style>
             body {
                 padding-top: 60px;
@@ -21,6 +21,7 @@
 		<link rel="stylesheet" href="{{ URL::to('boilerplate') }}/css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="{{ URL::to('boilerplate') }}/css/main.css">
 		<link rel="stylesheet" type="text/css" href="{{ URL::to('css') }}/main.css">
+		<link rel="stylesheet" type="text/css" href="{{ URL::to('css') }}/style.css">
 
 		 <script src="{{ URL::to('boilerplate') }}/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
