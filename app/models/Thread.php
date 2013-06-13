@@ -1,10 +1,10 @@
 <?php
 
-class Thread extends Eloquent{
+class Threads extends Eloquent{
 
 	public function category(){
 
-		return $this->belongsTo('Category');
+		return $this->belongsTo('category');
 	
 	}
 	
