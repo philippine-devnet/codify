@@ -111,3 +111,7 @@
 	- bug fixed
 	- UserView.js goto line: 38, all instantiation of any models that extend backbone-relational
 	- should use findOrCreate - user should not use new User() but User.findOrCreate
+
+	- added initializr html5 boilerplate w/ twitterbootstrap
+	- initializr folder - contains the latest html5boilerplate w/ bootstrap - you may use it if you want
+	- templates have been updated
