@@ -46,6 +46,7 @@ class ThreadTableSeeder extends Seeder{
 
 
 			$thread->title = $value['title'];
+			$thread->slug = $value['title'];
 			$thread->category = $category->id;
 			$thread->save();
 		}

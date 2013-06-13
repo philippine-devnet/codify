@@ -9,13 +9,13 @@ CategoryView = Backbone.View.extend({
 
 	events: {
 
-		'submit [spa-id=new-category-form]'  : 'saveUser'
+		'submit [spa-id=new-category-form]'  : 'saveCategory'
 
 	}, 
 
 	render: function(){
 
-
+		
 		this.data = new CategoryAll;
 
 		var that = this;
@@ -32,7 +32,7 @@ CategoryView = Backbone.View.extend({
 
 	},
 
-	saveUser: 		function(e){
+	saveCategory: 		function(e){
 		e.preventDefault();
 		var that = this;
 		var text = "[spa-id=new-category-form]";
