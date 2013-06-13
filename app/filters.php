@@ -41,7 +41,7 @@ Route::filter('auth', function()
 
 Route::filter('admin-auth',function(){
 	if(!Auth::user())
-		return Redirect::to('login');
+		return Redirect::to('login.php');
 });
 
 Route::filter('auth.basic', function()

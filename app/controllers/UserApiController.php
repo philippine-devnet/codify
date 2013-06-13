@@ -33,7 +33,7 @@ class UserApiController extends BaseController {
 	 */
 	public function store()
 	{
-		if(!Auth::user()){
+		if(!Auth::user() || Auth::user()->role->role_name != 'Admin'){
 			App::abort(401, 'You are not authorized.');
 		}
 		$rules = array(
@@ -43,7 +43,7 @@ class UserApiController extends BaseController {
 		$input = Input::all();
 		$validation = Validator::make($input, $rules);
 		if($validation->fails()){
-			App::abort(500, 'You are not authorized.');
+			App::abort(500, 'Field Validation Error');
 		}else{
 			$newUser = new User;
 			$newUser->username = Input::get('username');

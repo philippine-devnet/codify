@@ -29,7 +29,7 @@ php artisan db:seed
 
 
 To see the whole development process as well as the functionalities that were well established, as well as bugs and notifications
-from the developers. Please look at [Our Devnotes] (https://github.com/philippine-devnet/pitg-activity-restFul/blob/master/readme.md)
+from the developers. Please look at [Our Devnotes] (https://github.com/philippine-devnet/codify/blob/master/public/devnotes.txt)
 Please do know that we have our own lives that we could not establish this on our own.
 
 *The task list is not yet complete*
@@ -42,8 +42,8 @@ Core Developers:
 - [Aaron Espallardo] (https://www.facebook.com/aaron.espallardo)
 - [Nico Romero Penaredo] (https://www.facebook.com/nico.penaredondo)
 
-Core Designer:
-- [Katrina Yabu] (https://www.facebook.com/katrinayabu)
+Designers:
+- [Zeus Aranzo] (https://www.facebook.com/unikkbass)
 
 Documentation:
 - [Current Documentation] (https://dl.dropboxusercontent.com/u/74960080/pitg-project.docx)
