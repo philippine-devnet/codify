@@ -18,5 +18,8 @@ class HomeController extends BaseController {
 	public function showIndex(){
 		return View::make('home.index');
 	}
+	public function getIndex(){
+		return View::make('home.body');
+	}
 
 }

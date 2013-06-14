@@ -115,3 +115,15 @@
 	- added initializr html5 boilerplate w/ twitterbootstrap
 	- initializr folder - contains the latest html5boilerplate w/ bootstrap - you may use it if you want
 	- templates have been updated
+
+6/14/2013
+	- added new backbone plugin
+	- added controller for backbone.js
+	- added HomeController for backbone.js
+	- added backbone redirect router in case of somethings
+
+	##NOTE - IMPORTANT##
+	- backbone should aslo be able to manipulate meta title, description and facebook's OG. (Open Graph)
+	- this is for seo purposes
+	- we will not implement the Controller Routing for admin backbone
+	
