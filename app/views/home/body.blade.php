@@ -1,7 +1,5 @@
 @include('home.blocks.header')
-<body>
-<?php $page = "home.blocks.".$page;?>
-@include($page)
+<body spa-id='body'>
 @include('home.blocks.footer')
 </body>
 </html>
