@@ -14,12 +14,10 @@
 Route::controller('ap.php', 'APController');
 Route::controller('login.php', 'LoginController');
 
-Route::get('', 'HomeController@showIndex');
-
-Route::group(array('prefix'=>'!'),function(){
-	Route::controller('login','UserLoginController');
-	Route::get('','HomeController@showIndex');
+Route::get('', function(){
+	return Redirect::to('!/home');
 });
+Route::controller('!','HomeController');
 
 Route::group(array('prefix'=>'api'),function(){
 	Route::controller('users','UsersApiController');

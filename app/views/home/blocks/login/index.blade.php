@@ -11,8 +11,9 @@
                         <ul class="nav">
                             <li class="active"><a href="#">Home</a></li>
                             <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Developers</a></li>
+                            <li><a href="#developers">Developers</a></li>
                             <li><a href="#contact">Contact Us</a></li>
+                            li><a href="#login">Login</a></li>
                         </ul>
                         <!-- <form class="navbar-form pull-right">
                             <input class="span2" type="text" placeholder="Email">
